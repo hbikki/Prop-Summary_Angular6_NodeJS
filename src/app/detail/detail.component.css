@@ -1,0 +1,27 @@
+.headings{
+  background-color: coral ;
+  padding: 2px;
+  width:100%;
+  color: white;
+  font-size: x-large;
+  font-weight: bold
+}
+
+#property td, #property th {
+  border: 1px solid darkorange;
+  padding: 8px;
+}
+
+#property tr:nth-child(even){background-color: white;}
+#property tr:nth-child(odd){background-color: aliceblue;}
+#property tr:hover {background-color: #ddd;}
+
+#property th {
+  text-align: left;
+  background-color: red;
+  color: white;
+
+}
+table{
+  width:100%
+}

@@ -1,0 +1,25 @@
+
+<mat-card id="bodycard">
+  <form class="example-form">
+    <p>Search By Property :</p> <mat-form-field class="example-full-width" color="warn">
+    <input type="text" placeholder="Select Property" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredProperties | async" [value]="option.name">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  </form>
+
+  <mat-card >
+  <span *ngIf = " finalProperties.length < 1" >
+      <mat-card  style="margin: 20px 20px 20px 20px;border: slategray 5px solid;
+ " >No Property found</mat-card></span>
+    <form>
+  <span *ngFor = "let prop of finalProperties" >
+  <button mat-button style="width: 19% ; margin: 20px 20px 20px 20px;border: slategray 2px solid;   display: inline-block;margin:3%;padding: 30px;
+ " (click)="setDataValue(prop)">
+    <mat-icon color="warn"> business</mat-icon>  <strong style="padding: 10px">   {{ prop.name}}</strong>
+     </button></span>
+    </form>
+  </mat-card>
